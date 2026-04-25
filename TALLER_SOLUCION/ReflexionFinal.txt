@@ -1,0 +1,53 @@
+# Preguntas de Reflexión Final
+
+## Nivel 1: Comprensión
+
+**¿Cuál es la diferencia fundamental entre búsqueda lineal y binaria?**
+La búsqueda lineal recorre los elementos uno por uno hasta encontrar el valor, mientras que la búsqueda binaria divide el arreglo en mitades, descartando rápidamente grandes partes del conjunto de datos. Esto hace que la lineal tenga complejidad O(n) y la binaria O(log n), siendo esta última mucho más eficiente.
+
+---
+
+**¿Por qué un vector debe estar ordenado para usar búsqueda binaria?**
+Porque la búsqueda binaria se basa en comparar el elemento central y decidir si el valor buscado está a la izquierda o a la derecha. Si el arreglo no está ordenado, no se puede garantizar en qué mitad se encuentra el valor, lo que haría que el algoritmo falle.
+
+---
+
+**¿Qué significa FIFO y cómo lo experimentas en tu vida cotidiana?**
+FIFO significa “First In, First Out” (Primero en entrar, primero en salir). Se aplica en situaciones como filas en bancos, supermercados o transporte público, donde la primera persona en llegar es la primera en ser atendida.
+
+---
+
+## Nivel 2: Aplicación
+
+**Si tuvieras una base de datos de 1 millón de registros, ¿cuál algoritmo recomendarías? ¿Por qué?**
+Recomendaría la búsqueda binaria, ya que su complejidad O(log n) permite encontrar un elemento en aproximadamente 20 comparaciones, mientras que la búsqueda lineal podría necesitar hasta 1 millón de comparaciones en el peor caso.
+
+---
+
+**Diseña un escenario donde una cola FIFO sería inapropiada. ¿Qué estructura usarías?**
+Un ejemplo sería una sala de emergencias en un hospital, donde los pacientes no se atienden por orden de llegada sino por gravedad. En este caso sería mejor usar una cola de prioridad, donde los elementos más urgentes se atienden primero.
+
+---
+
+**¿Puede fallar la búsqueda binaria en algún caso? Describir.**
+Sí, puede fallar si el arreglo no está ordenado, ya que el algoritmo depende del orden para dividir correctamente el espacio de búsqueda. También puede fallar si los índices están mal definidos o si hay errores en la implementación.
+
+---
+
+## Nivel 3: Síntesis
+
+**Comparación: Ordenamiento + búsqueda binaria vs búsqueda lineal**
+
+* **Conjunto pequeño (n = 100):**
+  La búsqueda lineal es más conveniente, ya que el costo de ordenar puede ser mayor que simplemente recorrer el arreglo.
+
+* **Conjunto mediano (n = 100.000):**
+  Depende del caso. Si se realizan muchas búsquedas, conviene ordenar una vez y usar búsqueda binaria. Si es solo una búsqueda, la lineal puede ser suficiente.
+
+* **Conjunto grande (n = 1.000.000):**
+  Es más eficiente ordenar y luego usar búsqueda binaria, especialmente si se realizarán múltiples consultas, ya que el costo inicial se compensa con búsquedas muy rápidas.
+
+---
+
+**Propón un algoritmo híbrido que combina búsqueda lineal y binaria.**
+Un algoritmo híbrido podría comenzar con búsqueda binaria para reducir rápidamente el rango de búsqueda y, cuando el segmento restante sea pequeño, cambiar a búsqueda lineal. Esto mejora la eficiencia al aprovechar la rapidez de la binaria y la simplicidad de la lineal en conjuntos pequeños.
